@@ -31,12 +31,21 @@ what's going to be hard / uncertain?
 
 Timeline
 
-Events                    | Date
-------------------------- | ---------------------
-Final Project Proposal    | February 6
-Proof of Concept -- exploration & research finished | March 6
-Working Prototype         | April 2
-Final Critique & Feedback Session | April 23
+Week   | Events                   | Date
+------ | ------------------------ | ---------------------
+Week 3 |Final Project Proposal    | February 6
+Week 4 |
+Week 5 |
+Week 6 |
+Week 7 |
+Week 8 |
+Week 9 |
+Week 10|
+Week 11|Working Prototype         | April 2
+Week 12|
+Week 13|
+Week 14|Final Critique & Feedback Session | April 23
+Week 15|Proof of Concept -- exploration & research finished | March 6
 
 ***
 
