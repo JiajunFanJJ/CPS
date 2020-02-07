@@ -2,12 +2,6 @@
 
 ***
 
-Reference: 
-
-https://www.youtube.com/watch?v=Wb-C3khvuFM
-
-***
-
 Summary：
 
 It is a game by using facial recognition technology. When a player stand in front of the camera, and the camera recognize the face for 3 seconds, the game would start. There are kinds of face patterns, and when the player's face matches with one of face patterns, the player would get scores.
@@ -43,3 +37,9 @@ Final Project Proposal    | February 6
 Proof of Concept -- exploration & research finished | March 6
 Working Prototype         | April 2
 Final Critique & Feedback Session | April 23
+
+***
+
+Reference: 
+
+https://www.youtube.com/watch?v=Wb-C3khvuFM
