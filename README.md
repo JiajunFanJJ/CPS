@@ -23,7 +23,7 @@ Deconstruction System Diagram:
 | Camera | Animation by using player's face |
 | Faical emotions / patterns | Highest score / score for now |
 | Animation |
-| Record Scores |
+| Record scores |
 
 ***
 
