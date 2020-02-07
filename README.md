@@ -1,4 +1,4 @@
-# Final Project Proposal -- Crazy Face
+# Final Project Proposal --- Crazy Face
 
 ***
 
