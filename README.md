@@ -4,7 +4,7 @@
 
 Summary：
 
-It is a game by using facial recognition technology. When a player stand in front of the camera, and the camera recognize the face for 3 seconds, the game would start. There are kinds of face patterns, and when the player's face matches with one of face patterns, the player would get scores. If the player gets the highest socre, there would be a animation based on the player's face to celebrate.
+It is a game by using facial recognition technology. When a player stand in front of the camera, and the camera recognize the face for 3 seconds, the game would start. There are kinds of face patterns, and when the player's face matches with one of face patterns, the player would get scores. If the score gets over 100, there would be a animation based on the player's face to celebrate.
 
 ***
 
@@ -21,7 +21,7 @@ Deconstruction System Diagram:
 | Facial recognition spots | a normal face outline | Patterns flow  | If the face matches with one of the patterns, play sound effects and animations depending on what kind of patterns matched |
 | Three seconds warning | Three seconds count backwards | Keep Recognizing face | Celebration Animation |
 | Camera | Animation by using player's face |
-| Faical emotions / patterns |
+| Faical emotions / patterns | Highest score / score for now |
 | Animation |
 
 ***
