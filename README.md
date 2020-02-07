@@ -4,7 +4,7 @@
 
 Summary：
 
-It is a game by using facial recognition technology. When a player stand in front of the camera, and the camera recognize the face for 3 seconds, the game would start. There are kinds of face patterns, and when the player's face matches with one of face patterns, the player would get scores.
+It is a game by using facial recognition technology. When a player stand in front of the camera, and the camera recognize the face for 3 seconds, the game would start. There are kinds of face patterns, and when the player's face matches with one of face patterns, the player would get scores. If the player gets the highest socre, there would be a animation based on the player's face to celebrate.
 
 ***
 
