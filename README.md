@@ -19,7 +19,7 @@ Deconstruction System Diagram:
 | __Data__                 | __Render__            | __Simulation__ | __Events__ |
 |--------------------------|-----------------------|----------------|------------|
 | Facial recognition spots | a normal face outline | Patterns flow  | If the face matches with one of the patterns, play sound effects and animations depending on what kind of patterns matched |
-| Three seconds warning | Three seconds count backwards |
+| Three seconds warning | Three seconds count backwards | Recognize face |
 | Camera |
 | Faical emotions / patterns |
 
