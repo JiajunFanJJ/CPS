@@ -29,6 +29,10 @@ Deconstruction System Diagram:
 
 what's going to be hard / uncertain?
 
+A. Face recognition 
+
+B. Record players' faces to do animations
+
 ***
 
 Timeline
