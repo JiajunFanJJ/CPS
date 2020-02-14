@@ -32,6 +32,16 @@ what's going to be hard / uncertain?
 
 A. Face recognition 
 
+1. Basic patterns:
+2. open mouth, 
+3. kiss mouth, 
+4. sad mouth,
+5. happy mouth,
+6. up eyebrow,
+7. blink,
+8. side face,
+
+
 B. Record players' faces to do animations
 
 ***
