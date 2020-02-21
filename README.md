@@ -44,6 +44,8 @@ Basic patterns:
 
 B. Record players' faces to do animations
 
+
+
 ***
 
 Timeline
@@ -69,3 +71,5 @@ Week 15|Proof of Concept -- exploration & research finished | March 6
 Reference: 
 
 https://www.youtube.com/watch?v=Wb-C3khvuFM
+
+faceApi
