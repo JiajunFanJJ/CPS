@@ -34,16 +34,18 @@ A. Face recognition
 
 Basic patterns:
 1. open mouth, 
-2. kiss mouth, 
+2. kiss, 
 3. sad mouth,
 4. happy mouth,
 5. up eyebrow,
-6. blink,
-7. side face,
+6. side face,
 
 
 B. Record players' faces to do animations
 
+First, the player has to get over 60 (10 for each) scores to get the chance to see the animation in 30s.
+Second, it is a single player game, but it can be multiplayer if the player wants to see something surprising.
+Third, the screen shows the highest score.
 
 
 ***
@@ -53,16 +55,7 @@ Timeline
 Week   | Events                   | Date
 ------ | ------------------------ | ---------------------
 Week 3 |Final Project Proposal    | February 6
-Week 4 |
-Week 5 |
-Week 6 |
-Week 7 |
-Week 8 |
-Week 9 |
-Week 10|
 Week 11|Working Prototype         | April 2
-Week 12|
-Week 13|
 Week 14|Final Critique & Feedback Session | April 23
 Week 15|Proof of Concept -- exploration & research finished | March 6
 
