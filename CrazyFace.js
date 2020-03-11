@@ -126,10 +126,21 @@ function drawLandmarks(detections) {
     mouthy = detections[i].parts.mouth[0].y;
 
     line(Leye4x, Leye4y, mouthx, mouthy);
-    var LeyemouthDistance = dist(Leye4x, Leye4y, mouthx, mouthy);
 
+    //distance between eye and eyebrow
+    var Leyebrow2x = detections[i].parts.leftEyeBrow[2].x;
+    var Leyebrow2y = detections[i].parts.leftEyeBrow[2].y;
+    var Leye1x = detections[i].parts.leftEye[1].x;
+    var Leye1y = detections[i].parts.leftEye[1].y;
+
+    line(Leyebrow2x, Leyebrow2y, Leye1x, Leye1y);
+
+    var LeyemouthDistance = dist(Leye4x, Leye4y, mouthx, mouthy);
     var smileNumber = eyeDistance / LeyemouthDistance;
-    print(smileNumber);
+
+    var LeyeandborwDistance = dist(Leyebrow2x, Leyebrow2y, Leye1x, Leye1y);
+    var LeyebrowNumber = eyeDistance / LeyeandborwDistance;
+    print(LeyebrowNumber);
 
     //smile,
     //neture is 1.23~1.32,  smile is 1.46~1.52
@@ -147,6 +158,15 @@ function drawLandmarks(detections) {
       textSize(10);
       textAlign(CENTER);
       text("O_pose", height / 2, width / 2);
+    }
+
+    //raise Leyebrow
+    //neture is 3.7, Up is 2.8
+    if (LeyebrowNumber < 3.3) {
+      fill(255);
+      textSize(10);
+      textAlign(CENTER);
+      text("RaiseLEyeBrow", height / 2, width / 2);
     }
   }
 }
