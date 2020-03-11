@@ -33,8 +33,8 @@ what's going to be hard / uncertain?
 A. Face recognition 
 
 Basic patterns:
-1. open mouth, 
-2. kiss, 
+1. smile, 
+2. o pose, 
 3. sad mouth,
 4. happy mouth,
 5. up eyebrow,
