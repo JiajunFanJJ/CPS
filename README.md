@@ -32,16 +32,24 @@ what's going to be hard / uncertain?
 
 A. Face recognition 
 
-Basic patterns:
-1. smile, 
+Basic patterns:(have to be the front face, cannot be the side face)
+1. happy mouth, 
 2. o pose, 
 3. sad mouth,
-4. happy mouth,
-5. up eyebrow,
-6. side face,
+4. up eyebrow,
 
 
-B. Record players' faces to do animations
+B. Make a player's play screen, 
+
+1. Scores will show on the top Right,
+2. Time will be on the top middle,
+3. Face patterns that need the player to do will be the bottom left,
+4. When time counts zero, show the "GAME OVER" in the Center of the screen,
+5.(option) After the player gets 60 scores, there will be a new button on the Center of the screen, "SHOW ANIMATION",
+
+
+
+C. Record players' faces to do animations
 
 First, the player has to get over 60 (10 for each) scores to get the chance to see the animation in 30s.
 Second, it is a single player game, but it can be multiplayer if the player wants to see something surprising.
