@@ -17,6 +17,7 @@ var mouthy;
 var Leye4x;
 var Leye4y;
 
+var gameScreen = 0;
 
 // by default all options are set to true
 const detection_options = {
@@ -31,7 +32,7 @@ function setup() {
   // load up your video
   video = createCapture(VIDEO);
   video.size(width, height);
-  // video.hide(); // Hide the video element, and just show the canvas
+  video.hide(); // Hide the video element, and just show the canvas
   faceapi = ml5.faceApi(video, detection_options, modelReady)
   textAlign(RIGHT);
 }
@@ -56,32 +57,56 @@ function gotResults(err, result) {
   //image(video, 0, 0, width, height)
   if (detections) {
     if (detections.length > 0) {
-      console.log(detections)
-      // drawBox(detections)
-      drawLandmarks(detections)
+      console.log(detections);
+      // drawBox(detections);
+      drawLandmarks(detections);
     }
-
   }
   faceapi.detect(gotResults);
 }
 
-// function drawBox(detections) {
-//   for (let i = 0; i < detections.length; i++) {
-//     const alignedRect = detections[i].alignedRect;
-//     const x = alignedRect._box._x
-//     const y = alignedRect._box._y
-//     const boxWidth = alignedRect._box._width
-//     const boxHeight = alignedRect._box._height
+  
+function draw() {
 
-//     noFill();
-//     stroke(161, 95, 251);
-//     strokeWeight(2);
-//     rect(x, y, boxWidth, boxHeight);
-//   }
+  if (gameScreen == 0) {
+    initScreen();
 
-// }
+  } else if (gameScreen == 1) {
+    PlayScreen(detections);
 
-function drawLandmarks(detections) {
+  } else if (gameScreen == 2) {
+    EndScreen();
+  }
+}
+
+function initScreen() {
+
+  background(225);
+  textAlign(CENTER, CENTER);
+  fill(22, 146, 212);
+  textSize(50);
+  text("Crazy Face", width / 2, height - 160);
+
+  fill(100, 120, 80);
+  textSize(30);
+  text("Click to Start", width / 2, height - 70);
+
+}
+
+function PlayScreen(detections) {
+  
+  background();
+  var FaceScore = 0;
+  text(FaceScore, 10, 10);
+  stroke(0);
+  textSize(20);
+  
+  var Time = 60
+  text(Time, width / 2, 10);
+  stroke(0);
+  textSize(20);
+  
+  
   noFill();
   stroke(161, 95, 251)
   strokeWeight(2)
@@ -126,6 +151,7 @@ function drawLandmarks(detections) {
     mouthy = detections[i].parts.mouth[0].y;
 
     line(Leye4x, Leye4y, mouthx, mouthy);
+    var LeyemouthDistance = dist(Leye4x, Leye4y, mouthx, mouthy);
 
     //distance between eye and eyebrow
     var Leyebrow2x = detections[i].parts.leftEyeBrow[2].x;
@@ -134,19 +160,24 @@ function drawLandmarks(detections) {
     var Leye1y = detections[i].parts.leftEye[1].y;
 
     line(Leyebrow2x, Leyebrow2y, Leye1x, Leye1y);
-
-    var LeyemouthDistance = dist(Leye4x, Leye4y, mouthx, mouthy);
-    var smileNumber = eyeDistance / LeyemouthDistance;
-
     var LeyeandborwDistance = dist(Leyebrow2x, Leyebrow2y, Leye1x, Leye1y);
+
+    var mouth6x = detections[i].parts.mouth[6].x;
+    var mouth6y = detections[i].parts.mouth[6].y;
+
+    line(mouthx, mouthy, mouth6x, mouth6y);
+    var mouthDistance = dist(mouthx, mouthy, mouth6x, mouth6y);
+
+    var smileNumber = eyeDistance / LeyemouthDistance;
     var LeyebrowNumber = eyeDistance / LeyeandborwDistance;
-    print(LeyebrowNumber);
+    var mouthNumber = eyeDistance / mouthDistance;
+    print(mouthNumber);
 
     //smile,
     //neture is 1.23~1.32,  smile is 1.46~1.52
     if (smileNumber > 1.44) {
-      fill(255);
-      textSize(10);
+      stroke(0);
+      textSize(15);
       textAlign(CENTER);
       text("Smiling", height / 2, width / 2);
     }
@@ -154,8 +185,8 @@ function drawLandmarks(detections) {
     //o pose,
     //o pose is 1.18~1.22
     if (smileNumber < 1.21) {
-      fill(255);
-      textSize(10);
+      stroke(0);
+      textSize(15);
       textAlign(CENTER);
       text("O_pose", height / 2, width / 2);
     }
@@ -163,13 +194,44 @@ function drawLandmarks(detections) {
     //raise Leyebrow
     //neture is 3.7, Up is 2.8
     if (LeyebrowNumber < 3.3) {
-      fill(255);
-      textSize(10);
+      stroke(0);
+      textSize(15);
       textAlign(CENTER);
       text("RaiseLEyeBrow", height / 2, width / 2);
     }
+
+    //sad,
+    //neture is 1.23~1.32, sad is 1.1~1.2
+    if (smileNumber < 1.2) {
+      stroke(0);
+      textSize(15);
+      textAlign(CENTER);
+      text("Sad", height / 2, width / 2);
+    }
+
+    //side face
+    //neture is 1.88-2.0, side face
+    // if (mouthNumber ) {
+    //   stroke(255);
+    //   textSize(20);
+    //   textAlign(CENTER);
+    //   text("SideFace", height / 2, width / 2);
+    // }
   }
 }
+
+function EndScreen() {
+
+  background(225);
+  fill(255, 0, 0);
+  textSize(50);
+  text("Nice Done!", 300, 250);
+  fill(100, 120, 80);
+  textSize(30);
+  text("Click to Start Again", width / 2, height - 80);
+  textAlign(CENTER, CENTER);
+}
+
 
 function drawPart(feature, closed) {
 
@@ -188,7 +250,13 @@ function drawPart(feature, closed) {
 
 }
 
+function mousePressed() {
 
+  if (gameScreen == 0 || gameScreen == 2) {
+    gameScreen = 1;
+  }
+}
+  
 // mouth 48 - 54, bigger would be ,smile
 // leftEye[4] - mouth[0]
 // RightEye[4] - mouth[6]
